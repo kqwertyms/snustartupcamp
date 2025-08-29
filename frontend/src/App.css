@@ -3,9 +3,10 @@
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+.full-bleed { width: 100vw; box-sizing: border-box; margin-left: 50%; transform: translateX(-50%); padding-left: 2vw; padding-right: 2vw; }
 
 .hero {
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
   color: white;
   padding: 6rem 1.5rem;
   text-align: center;
@@ -38,8 +39,24 @@
   text-decoration: none;
 }
 
-.btn--primary { background: #111827; color: #fff; }
-.btn--secondary { background: #f3f4f6; color: #111827; }
+.btn--primary { 
+  background: #7c3aed; 
+  color: #fff; 
+  transition: all 0.3s ease;
+}
+.btn--primary:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+}
+.btn--secondary { 
+  background: #f3e8ff; 
+  color: #7c3aed; 
+  transition: all 0.3s ease;
+}
+.btn--secondary:hover {
+  background: #e9d5ff;
+  transform: translateY(-2px);
+}
 
 .health { font-size: 0.9rem; opacity: 0.9; }
 
@@ -64,15 +81,53 @@
 
 .card {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e9d5ff;
   border-radius: 12px;
   padding: 1.25rem;
   text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
 }
 
-.feature h3 { margin: 0 0 0.25rem 0; }
-.feature p { margin: 0; color: #4b5563; }
+.feature h3 { margin: 0 0 0.25rem 0; color: #7c3aed; }
+.feature p { margin: 0; color: #6b7280; }
 
 .cta { text-align: center; margin-top: 2rem; }
 
-.footer { text-align: center; padding: 2rem 0; color: #6b7280; }
+.footer { text-align: center; padding: 2rem 0; color: #8b5cf6; }
+
+/* Upload layout */
+.upload-layout { display: grid; grid-template-columns: 30% 60%; column-gap: 4%; margin-top: 2rem; }
+.upload-sidebar { background: #fff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 1rem; height: calc(100vh - 160px); position: sticky; top: 1rem; margin-left: 1vw; }
+.logo { font-weight: 700; font-size: 1.25rem; color: #7c3aed; text-align: center; padding: 0.75rem 0; border-bottom: 1px solid #f3e8ff; margin-bottom: 0.75rem; }
+.nav { display: grid; gap: 0.5rem; }
+.nav__item { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.75rem; border-radius: 10px; text-decoration: none; color: #374151; border: 1px solid transparent; }
+.nav__item:hover { background: #f9f5ff; border-color: #f3e8ff; }
+.nav__item--active { background: #f3e8ff; border-color: #e9d5ff; color: #6d28d9; font-weight: 600; }
+.nav__icon { width: 20px; text-align: center; }
+
+.upload-content { background: #fff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 1.5rem; }
+.page-title { font-size: 1.5rem; margin: 0 0 1rem 0; }
+.upload-actions { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+
+.preview-frame { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.preview-toolbar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #111827; color: #e5e7eb; font-size: 0.9rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block; }
+.dot:nth-child(2) { background: #f59e0b; }
+.dot:nth-child(3) { background: #10b981; }
+.preview-canvas { background: #fff; height: 420px; display: grid; place-items: center; }
+.preview-image { max-width: 92%; max-height: 90%; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.empty-canvas { width: 90%; height: 85%; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+.preview-footer { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #f9fafb; border-top: 1px solid #e5e7eb; }
+.loading { display: inline-flex; align-items: center; gap: 8px; color: #6b7280; }
+.spinner { width: 16px; height: 16px; border: 2px solid #ddd6fe; border-top-color: #7c3aed; border-radius: 50%; animation: spin 1s linear infinite; }
+.footer-actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
+.btn--wide { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Icon row */
+.icon-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 1rem; align-items: center; }
+.icon-circle { width: 70px; height: 70px; border-radius: 9999px; background: #e5e7eb; display: inline-flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: background 0.2s ease; }
+.icon-circle:hover { background: #d1d5db; }
+.icon-circle svg { width: 28px; height: 28px; }
+.icon-row--sidebar { grid-template-columns: repeat(3, 70px); justify-content: center; margin: 0 0 0.75rem 0; }

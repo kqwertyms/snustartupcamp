@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
     <>
       <header className="hero">
         <div className="hero__content">
-          <h1 className="hero__title">SNU Startup Camp</h1>
-          <p className="hero__subtitle">아이디어를 제품으로. 팀을 성장으로.</p>
+          <h1 className="hero__title">수기 기록 없이, 한 번 입력으로 리포트·문자까지 끝.</h1>
+          <p className="hero__subtitle">사람을 관리하고 기록하는 모든 이들을 위해 설계된 올인원 자동화 CRM</p>
           <div className="hero__cta">
-            <a className="btn btn--primary" href="#get-started">Get Started</a>
+            <Link className="btn btn--primary" to="/get-started">무료로 시작하기</Link>
+            <Link className="btn btn--secondary" to="/demo" style={{ marginLeft: 12 }}>데모 신청</Link>
             <span className="health">API: {apiHealth}</span>
           </div>
         </div>
@@ -42,7 +44,7 @@ function App() {
         </div>
 
         <div className="cta">
-          <a className="btn btn--secondary" href="#">지금 시작하기</a>
+          <Link className="btn btn--secondary" to="/get-started">지금 시작하기</Link>
         </div>
       </main>
 
