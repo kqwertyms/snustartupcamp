@@ -16,7 +16,7 @@ function App() {
     <>
       <header className="hero">
         <div className="hero__content">
-          <h1 className="hero__title">수기 기록 없이, 한 번 입력으로 리포트·문자까지 끝.</h1>
+          <h1 className="hero__title">수기 기록 없이, 한 번 입력으로 리포트·문자까지 끝ㅇㅇㅇ.</h1>
           <p className="hero__subtitle">사람을 관리하고 기록하는 모든 이들을 위해 설계된 올인원 자동화 CRM</p>
           <div className="hero__cta">
             <Link className="btn btn--primary" to="/get-started">무료로 시작하기</Link>
